@@ -17,4 +17,11 @@ def doc_load():
          label = label+1  #对文档进行数值标记
 
     return docs_list,labels_list
-#return docs_list,labels_list
+
+
+
+
+
+
+
+
