@@ -1,10 +1,14 @@
-import nltk
-from nltk.corpus import stopwords   #使用nltk提供的的stopwords
-from nltk.stem.porter import PorterStemmer  # 提取词干
-from nltk.stem import WordNetLemmatizer
 
-#去除给定text的太小写以及标点符号
 
-def get_token(text):
+import re
+import textblob as tb
+
+text ="I went to  Shanghai last monday and brought mang eggs!"
+
+def string_split(text):
      lowers = text.lower() #大小写
-    # remove_punctuation_map = dict((ord(char),None) for char in string.punctuation )
+     words = re.split('[^a-z]*',lowers) #以所有字母以外的符号作为分隔符进行分词
+     words = [word for word in words if len(word) >=3 ] #去掉长度小于三的词
+     words = tb.WordList(words).singularize()  # 复数变单数
+     words = [word.lemmatize('v') for word in words ]  #过去式、进行时变一般形式
+     return words
