@@ -23,14 +23,9 @@ def euclidean_compute(x_test,x_train):
      return distance
 
 #knn方法
-#'''
-##x_train 训练数据
-#y_traun 训练数据标签
-#k
-#返回x_test属于哪一类
-#'''
-def knn_cal(x_test,x_trai,y_train,k):
-    distance = enclidean_compute（x_test,x_train)
+
+def knn_cal(x_test,x_train,y_train,k):
+    distance = enclidean_compute(x_test,x_train)
     sortedDistIndecies = distance.argsort()
     classCount = {}
 
