@@ -16,7 +16,7 @@ def cos_compute(x_test,x_train):
 def euclidean_compute(x_test,x_train):
      num_train = len(x_train)
      x_test = np.tile(x_test,(num_train,1))
-     test_minus_train = x_test - x_test
+     test_minus_train = x_test - x_train
      square = test_minus_train**2
      sum = square.sum(axis=1)
      distance = sum**0.5
@@ -25,7 +25,7 @@ def euclidean_compute(x_test,x_train):
 #knn方法
 
 def knn_cal(x_test,x_train,y_train,k):
-    distance = enclidean_compute(x_test,x_train)
+    distance = euclidean_compute(x_test,x_train)
     sortedDistIndecies = distance.argsort()
     classCount = {}
 

@@ -19,7 +19,7 @@ def doc_load():
          for doc in docs :
              with open ("C:\\Users\\Donna\\PycharmProjects\\201834862DouJinfeng\\20news-18828"+'\\'+dir+'\\'+doc,'rb') as data:  #打开文档
                  docs_list.append(data.read()) #取读文档
-                 labels_list.append(label)
+             labels_list.append(label)
 
          label = label+1  #对文档进行数值标记
 
@@ -34,14 +34,14 @@ def string_split(text):
      words = tb.WordList(words).singularize()  # 复数变单数
      words = [word.lemmatize('v') for word in words ]  #过去式、进行时变一般形式
      stoplists = pw.words("english") #得到stopwords相应的stoplists
-     words = [word for word in words if word not in  stoplists] #删除stoplists当中的单词
+     words = [word for word in words if word not in stoplists] #删除stoplists当中的单词
      return words
 
 #对每个文档进行分割
 def doc_split(docs_list):
      words_list = []
      for doc in docs_list:
-          words_list.append(string_split(doc)) ####此处写的不一样
+          words_list.append(string_split(str(doc))) ####此处写的不一样
      return  words_list
 
 #将文档中单词频率低于frequency的单词去掉，并返回去掉低频词的new_words_list
@@ -70,9 +70,9 @@ def words_statistics(words_list):
      for doc in words_list:
           word_tf = dict()
           for word in doc:
-               word_df[word] =word_df.get(word,0)+1
+               word_tf[word] =word_tf.get(word,0)+1
                if(word_doc_tf.__contains__(word)):
-                    word_doc_tf[word][words_list.index(doc)] = word_doc_tf[word].get(words_list.idex(doc),0)+1
+                    word_doc_tf[word][words_list.index(doc)] = word_doc_tf[word].get(words_list.index(doc),0)+1
                else:
                     word_doc_tf[word] = {words_list.index(doc):1}
           doc_word_tf.append(word_tf)
