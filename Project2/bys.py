@@ -134,7 +134,7 @@ def data_save():
         data.write(str(Y_train))
     with open('.\\tmp\\X_test.txt','w') as data:
         data.write(str(X_test))
-    with open('.\\tmp\\Y_test','w') as data:
+    with open('.\\tmp\\Y_test.txt','w') as data:
         data.write(str(Y_test))
 
 if __name__=="__main__":
@@ -146,7 +146,16 @@ if __name__=="__main__":
         data_save()
         main()
 
-
+'''
+if __name__=="__main__":
+    print("begin")
+    flag=True
+    if(flag):
+        main()
+    else:
+        data_save()
+        main()
+'''
 
 
 
