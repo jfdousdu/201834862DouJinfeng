@@ -36,7 +36,6 @@ def _string_split(str):
     catcheStopWords = pw.words("english")
     words = [word for word in words if word not in catcheStopWords]
     return words
-
 '''
 cut docs_list into doc_list 
 '''
