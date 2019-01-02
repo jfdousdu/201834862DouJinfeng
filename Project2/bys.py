@@ -17,7 +17,9 @@ def calc_x_y_prob(x_train,y_train):
             num_all[y_train[i]]+=1
     for i in range(NUM_CLASS):
         for key in res[i]:
-            res[i][key] = (res[i][key]+1)/(num_all[i]+len(list(res[i].keys())))
+            ##res[i][key] = (res[i][key]+1)/(num_all[i]+len(list(res[i].keys())))
+            res[i][key] = res[i][key] / num_all[i]
+
     return res,num_all
 
 def calc_y_prob(Y_train):
