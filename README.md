@@ -16,7 +16,6 @@
 
 2019/01/02
 **要求在tweets数据集上进行各种聚类算法的实验，一共包括八种聚类方式，
-然后用NMI(Normalized Mutual Information)作为评价指标对聚类结果进行评价
-**
+然后用NMI(Normalized Mutual Information)作为评价指标对聚类结果进行评价**
 (1)clustering.py进行各种聚类算法的实验，一共包括八种聚类方式 等
 **实验结果，实验报告详细介绍
